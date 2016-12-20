@@ -10,6 +10,8 @@
     <script>
       function name(num, singular, double, plural)
       {
+        if(num >= 11 && num <= 14)
+          return plural;
         switch (num%10) {
           case 2:
           case 3:

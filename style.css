@@ -18,11 +18,12 @@ h2,h3,h4,h5,h6 {
 #timer {
   position: fixed;
   top: 45%;
-  height: 50px;
+  height: 17%;
 
 }
 
 #caption {
   position: fixed;
   bottom: 30%;
+  height: 8%;
 }
