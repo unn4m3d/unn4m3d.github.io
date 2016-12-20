@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  color : red;
+}
+
+h2,h3,h4,h5,h6 {
+  color : orange;
+}
+
+#timer {
+  position: fixed;
+  top: 45%;
+  height: 50px;
+
+}
+
+#caption {
+  position: fixed;
+  bottom: 30%;
+}

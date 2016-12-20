@@ -1,8 +1,57 @@
 <html>
   <head>
     <title>unn4m3d</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <meta charset="utf-8"/>
   </head>
   <body>
-    <h1> Hello world </h1>
+    <h1 id="timer"></h1>
+    <h4 id="caption">Осталось Хеллу, чтобы сконфигурировать сервер</h4>
+    <script>
+      function name(num, singular, double, plural)
+      {
+        switch (num%10) {
+          case 2:
+          case 3:
+          case 4:
+            return double;
+            break;
+          case 1:
+            return singular;
+            break;
+          default:
+            return plural;
+        }
+      }
+
+      function updateTimer(elem,date)
+      {
+        var curr = new Date();
+        var millis = date-curr;
+        if(millis < 0)
+        {
+          elem.innerHTML = "Время вышло!";
+          return;
+        }
+
+        var seconds = (millis/1000)|0;
+        var minutes = (seconds/60)|0; seconds %= 60;
+        var hours = (minutes/60)|0; minutes %= 60;
+        var days = (hours/24)|0; hours %= 24;
+
+        var str = days + " " + name(days,"день","дня","дней") + " ";
+        str += hours + " " + name(hours, "час", "часа", "часов") + " ";
+        str += minutes + " " + name(minutes, "минута", "минуты", "минут") + " ";
+        str += seconds + " " + name(seconds, "секунда","секунды","секунд");
+
+        if(elem.innerHTML !== str)
+          elem.innerHTML = str;
+      }
+
+      setInterval(function(){
+        updateTimer(document.getElementById('timer'),new Date("December 29, 2016 07:00:00"));
+        console.log("updating");
+      },450);
+    </script>
   </body>
 </html>
